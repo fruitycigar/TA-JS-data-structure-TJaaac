@@ -36,7 +36,7 @@ console.log(student["42"]);
 
 // 10. Check the length of object named `students`.
 
-// ?????
+console.log(student.length);
 
 // 11. Can you define a key of `let or var` in any object? Reason.
 
