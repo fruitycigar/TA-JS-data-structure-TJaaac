@@ -27,7 +27,7 @@ let newUser = user;
 - `user.sibling == allBrothers;` // false // both of these objects are contained in different addesses.
 - `user.sibling === allBrothers;` // false // same reason as above.
 - `brothersCopy === allBrothers;` // false // refer to similar identical objects but contained in different addresses.
-- `brothersCopy == allBrothers;` // fale // same as the previous question.
+- `brothersCopy == allBrothers;` // false // same as the previous question.
 - `brothersCopy == user.sibling;` // true // both of them lead to the same address
 - `brothersCopy === user.sibling;` // true // same as above
 - `brothersCopy[0] === user.sibling[0];` // true // both of them return the strong value 'Robb'and are equal.
