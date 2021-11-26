@@ -4,6 +4,8 @@ let userIds = [1230, 234, 1278, 984, 763, 900];
 
 // 1. Add all the values of numbers and userIds array into the new newly created array named `collection`
 
+// ?????
+
 // 2. Add all the even numbers from both arrays numbers and userIds into a newly created array named `evenCollection`
 
 // 3. Add all the odd numbers from both arrays numbers and userIds into a newly created array named `oddCollection`
