@@ -10,12 +10,12 @@ let person2 = person;
 
 person.firstName = 'Arya';
 
-console.log(person2.firstName); // output
-console.log(person.firstName); // output
-console.log(person.lastName); // output
-console.log(person == person2); // output
-console.log(person === person2); // output
-console.log(person.lastName === person2.lastName); // output
+console.log(person2.firstName); // 'Arya' // The address contaning the memory representation of the object is question was altered through the earlier command. As a result, person2's key value has also changed.
+console.log(person.firstName); // 'Arya' // The command person.firstname target the first key value and changed it to 'Arya'.
+console.log(person.lastName); // 'Doe' // Remains unchanged as it was not affected in anyway.
+console.log(person == person2); // true // Both varaibles have the same address pointing to the same object.
+console.log(person === person2); // true // Strict equality does not change the fact that both of them have the same address pointing to the same object.
+console.log(person.lastName === person2.lastName); // true // Since the 'lastName' key remains unchanged for both variables, they remain the same and are equal.
 ```
 
 2. Write the output with reason:
@@ -37,17 +37,17 @@ let personTwo = { ...person };
 person.firstName = 'Arya';
 person.city = 'Navada';
 
-console.log(personTwo.firstName); // output
-console.log(person.firstName); // output
-console.log(personTwo.lastName); // output
-console.log(person.firstName === personTwo.firstName); // output
-console.log(person == personTwo); // output
-console.log(person === personTwo); // output
-console.log(person.address === personTwo.address); // output
-console.log(person.address == personTwo.address); // output
-console.log(personTwo.address.city); // output
-console.log(person.address.city); // output
-console.log(person.address.city == personTwo.address.city); // output
+console.log(personTwo.firstName); // 'John' // It has been cloned so the output would be the same as that of the firstName key of perso, prior to the change.
+console.log(person.firstName); // 'Arya' // The command above alters the key value of person to the present value of 'Arya'.
+console.log(personTwo.lastName); // 'Doe' // Being a clone of the person variable, the lastName value is the same as person prior to it's conversions.
+console.log(person.firstName === personTwo.firstName); // false // person's firstName is 'Arya' whereas person2's firstName is 'John'.
+console.log(person == personTwo); // false // Both person and personTwo contain different addresses referring to similar, but ultimately different objects.
+console.log(person === personTwo); // false // Same reason as the preceding question. Tightening the equality parameter does not change anything.
+console.log(person.address === personTwo.address); // true // Due to shallow cloning, the address key contains the same memoery representation for both person and personTwo.
+console.log(person.address == personTwo.address); // true // Same reason as the preceding question.
+console.log(personTwo.address.city); // 'San Jose' // Same as the address.city value for person.
+console.log(person.address.city); // 'San Jose'
+console.log(person.address.city == personTwo.address.city); // true // Since the address key is the same for both person and person2, this equality will hold true.
 ```
 
 3. Write the output with reason:
@@ -69,17 +69,17 @@ let personTwo = { ...person, address: { ...person.address } };
 person.firstName = 'Arya';
 person.city = 'Navada';
 
-console.log(personTwo.firstName); // output
-console.log(person.firstName); // output
-console.log(personTwo.lastName); // output
-console.log(person.firstName === personTwo.firstName); // output
-console.log(person == personTwo); // output
-console.log(person === personTwo); // output
-console.log(person.address === personTwo.address); // output
-console.log(person.address == personTwo.address); // output
-console.log(personTwo.address.city); // output
-console.log(person.address.city); // output
-console.log(person.address.city == personTwo.address.city); // output
+console.log(personTwo.firstName); // 'John'
+console.log(person.firstName); // 'John'
+console.log(personTwo.lastName); // 'Doe'
+console.log(person.firstName === personTwo.firstName); // true // both of those expressions resolve to the string 'John' thereby making it true.
+console.log(person == personTwo); // true // person was deep cloned to personTwo, so they share the same memory representations right down to the address key.
+console.log(person === personTwo); // true // same reason as above.
+console.log(person.address === personTwo.address); // true // Deep cloning enabled them to share the same memory representation.
+console.log(person.address == personTwo.address); // true // Stricter form of equality doesn't change the fact that they share the same memory representation, therefore they are true.
+console.log(personTwo.address.city); // 'San Jose'
+console.log(person.address.city); // 'San Jose'
+console.log(person.address.city == personTwo.address.city); // true // both of these expressions resolve to being 'San Jose', so the equality will be true.
 ```
 
 4. Clone the `blogs` variable into a new variable named `clonedBlogs`
@@ -103,7 +103,7 @@ let blogs = [
   },
 ];
 
-// Your code goes here
+// clonedBlogs = [ ...blogs ];
 ```
 
 5. Clone the `question` variable into a new variable named `questionClone`
@@ -128,7 +128,7 @@ var questions = [
   },
 ];
 
-// Your code goes here
+// let questionClone = [ ...questions ]'
 ```
 
 6. Clone the `allBlogs` variable into a new variable named `allBlogsClone`
@@ -155,7 +155,7 @@ var allBlogs = {
   ],
 };
 
-// Your code goes here
+// let allBlogsClone = [ ...allBlogs ];
 ```
 
 7. Clone the `person` variable into a new variable named `clonedPerson`
@@ -188,7 +188,7 @@ let person = [
   },
 ];
 
-// Your code goes here
+// let clonedPerson = [ ...person ];
 ```
 
 8. Write a function named `cloneObject` that accepts an object and returns the clone of the object
